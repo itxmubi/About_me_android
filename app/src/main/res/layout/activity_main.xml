@@ -4,6 +4,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="myName"
+            type="com.example.about_me.Myname" />
+
+
+    </data>
 
 <LinearLayout
     android:id="@+id/LinearLayout"
@@ -17,11 +24,12 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/name_text"
         style="@style/style_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="@string/whats_app"
+        android:text="@={myName.name}"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,14 +57,15 @@
         android:hint="@string/what_is_your_name"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:text="Name" />
+        />
 
     <TextView
         android:id="@+id/nickname_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
-        android:visibility="gone" />
+        android:visibility="gone"
+        android:text="@={myName.nickname}"/>
 
     <ImageView
         android:id="@+id/imageView"
